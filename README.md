@@ -1,10 +1,16 @@
-# HTML, CSS & JavaScript Practice
+# Frontend Practice
 
-This repository contains basic HTML, CSS, and JavaScript files created while learning frontend web development.
+This repository contains practice projects and exercises focused on frontend development using:
 
-The code focuses on:
-- Core HTML structure
-- CSS stylings
-- JavaScript interactions
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+
+The projects demonstrate:
+
+- Layout structuring with HTML
+- Styling and responsive design with CSS and Bootstrap
+- Basic interactivity using JavaScript
 
 These files are intended to demonstrate foundational understanding (with detailed notes) and learning progression.
