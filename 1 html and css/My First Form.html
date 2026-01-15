@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Form</title>
+
+    <style>
+        *{
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <form action="" method="get"></form>
+    <form action="" method="post"></form> -->
+
+    <!-- form.php means submit this form to that php file -->
+
+    <form action="form.php">
+
+        <h1>Form for trip</h1>
+
+        <!-- below is a method for writing name with textbox -->
+        <!-- <div>Name: <input type="text"></div> -->
+
+        <input type="text" placeholder="Enter Your Section">
+
+        <!-- we can use input tag without label tag but by using label we can also use text of label to fill the radio button -->
+
+        <!-- Name of radio buttons must be same for filling one radio butto at a time, in backend  we recognize elements by name -->
+
+        <br><hr>
+
+        <!-- In label for attribute is for id. When name given in for attribute of a label match with id of checkbox or radio or text input element then on clicking on label also select or fills radio or checkbox -->
+        <!-- as label selectida and input selectida has same name therefore clicking on label also fill the radio button selectida -->
+        <!-- to select only one radio button or checkbox at a time then we have to name them same -->
+        <label for="Selectida">
+            <input type="Radio" name="Section" id="Selectida">Section A
+        </label>
+
+        <label for="Selectidb">
+            <input type="Radio" name="Section" id="Selectidb">Section B
+            <!-- if we use id selectida instead of selectidb then text Section B will not work for filling radio button -->
+            <!-- <input type="Radio" value="Section b" name="Section" id="Selectida">Section B -->
+        </label>
+
+        <br><hr>
+
+        <!-- we can make label with input (by not making input inside label) but in this case we have to give id of input tag in lable tag,see below -->
+        
+        <input type="checkbox" id="foodcanteen" checked>
+        <label for="foodcanteen">Want Food Canteen There</label>
+
+        <br><hr>
+
+        <textarea name="Explain" cols="30" rows="10" placeholder="Explain why you want to join"></textarea>
+
+        <br><hr>
+         
+        <!-- select tag is like listbox . value in option is used in backend. When we write selected with some option in select tag then that will be by defauly selected -->
+
+        <select name="selectvehicle" id="selectvehicle">
+            <option value="no car">Select Car</option>
+            <option value="civic" selected>Civic</option>
+            <option value="gli">Gli</option>
+            <option value="suzuki">Suzuki</option>
+        </select>
+
+        <input type="date">
+        <input type="number">
+
+        <br>
+
+        <!-- as there is no form.php so onm clicking it it gives error. We have to give it inside form tag -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        
+    </form>
+
+    <!-- Writing text outside of tag, makes this text span as whole body(when we hover over it,it spans whole body so if we edit this text in css,it change the whole body may be). But if we use label then text outside tag (eg Section B) also become part of Radio -->
+    <!-- <br>Eeman -->
+
+    <!-- <input type="text" placeholder="Enter Something" area-placholder="This is area-placholder"> -->
+</body>
+
+</html>

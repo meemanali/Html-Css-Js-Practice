@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+            background-color: var(--myvar);
+        }
+        .item{
+            /* below is a variable. Its scope is inside in this item ie it is a local variable. Below is a blue color but we set its alpha as 0.5 */
+
+            background-color: var(--myvar);
+            margin: 2px 10px;
+            /* if we dont set its height then it takes heigth of container */
+            height: var(--maxwidth);            
+            width: var(--maxwidth);
+        }        
+        /* the variable or properties we write in root are global ie we can can access them anywhere */
+        :root{
+            --myvar: rgba(0, 0, 255, 0.5);
+
+            /* we can also create color and properties */
+            --maxwidth: 200px;
+        }
+    </style>    
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tenetur earum soluta possimus recusandae voluptatibus ad, necessitatibus veritatis veniam excepturi?
+        </div>
+        <div class="item">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tenetur earum soluta possimus recusandae voluptatibus ad, necessitatibus veritatis veniam excepturi?
+        </div>
+        <div class="item">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tenetur earum soluta possimus recusandae voluptatibus ad, necessitatibus veritatis veniam excepturi?
+        </div>
+    </div>
+</body>
+</html>

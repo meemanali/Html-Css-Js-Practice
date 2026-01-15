@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Box Model</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        .container {
+            background-color: rgb(230, 250, 250);
+            border: 3px solid rgb(64, 6, 120);
+
+            /* margin is outside of border */
+            /* margin:50px; */
+            /* padding is inside the border or inside the item */
+            /* padding: 25px; */
+
+            /* padding/margin pattern = top right bottom left */
+            padding: 10px 20px 50px 100px;
+
+            /* padding/margin pattern = top/bottom left/right */
+            margin: 5vh 20vw;
+
+            /* padding-right: 25px;
+            padding-left: 25px;            
+
+            margin-top: 50px;
+            margin-bottom: 50px;             */
+
+            border-bottom-left-radius: 50px;
+
+
+            
+        }
+
+        .width-checking {
+            border: 2px solid;
+            width: 250px;
+            height: 100px;            
+
+        }
+
+        #istdiv {
+            margin: 10px;
+            padding: 10px;
+
+            display: inline-block;
+
+            background-color: cadetblue;
+
+            /* When we set width it is width of only element without margin,border and padding. When we add m,b, and p then its width increase to new width. But if we want our width to remain fix then we use box-sizing property of css */
+            box-sizing: border-box;
+
+            /* now if we set box-sizing then this box will get exect width of 250px by adjusting margin,border and padding inside it*/
+            /* but if we remove box-sizing then box will get 250 + m, b and p = 294px */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut inventore obcaecati ullam iusto
+        ex doloribus eligendi reprehenderit pariatur quasi consectetur!Loremlorem12 Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Cum aut explicabo, ea accusamus dolores perspiciatis culpa quaerat. Sit quibusdam
+        maxime sequi consectetur, nesciunt ab repellat porro autem optio, ut rem!</div>
+    <div class="container">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut inventore obcaecati ullam iusto
+        ex doloribus eligendi reprehenderit pariatur quasi consectetur!Loremlorem12 Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Cum aut explicabo, ea accusamus dolores perspiciatis culpa quaerat. Sit quibusdam
+        maxime sequi consectetur, nesciunt ab repellat porro autem optio, ut rem!</div>
+    <div class="container">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut inventore obcaecati ullam iusto
+        ex doloribus eligendi reprehenderit pariatur quasi consectetur!Loremlorem12 Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Cum aut explicabo, ea accusamus dolores perspiciatis culpa quaerat. Sit quibusdam
+        maxime sequi consectetur, nesciunt ab repellat porro autem optio, ut rem!</div>
+    
+        <hr>
+
+
+        <div style="width: 246px; border: 2px solid; margin: 10px;">246px + 2+2px = 250px</div>
+        
+        <!-- width of below box is 250px but by adding margin, border and padding its total width will become 294px -->
+        <div id="istdiv" class="width-checking">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, optio?</div>
+        
+        <!-- below line's width will 294px which is equal to width of above box -->
+        <div style="width: 290px; border: 2px solid; margin: 10px 0px;">290px + 2+2px = 294px</div>
+        
+        <!-- When we set width it is width of only element without margin,border and padding. When we add m,b, and p then its width increase to new width. But if we want our width to remain fix then we use box-sizing property of css -->
+
+
+
+
+    <div class="width-checking">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, optio?</div>
+
+    <div style="width: 250px; border: 2px solid; margin: 10px 0px;"></div>
+</body>
+
+</html>

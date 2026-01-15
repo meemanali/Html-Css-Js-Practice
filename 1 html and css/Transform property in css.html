@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{            
+            margin: 0px;
+        }
+        .container{
+            background: cadetblue;
+            height: 100vh;
+            display: flex;
+            /* below set element as horizontaly center */
+            justify-content: center;
+            /* below set element as verticaly center */
+            align-items: center;
+        }
+        .box{
+            display: flex;            
+            justify-content: center;            
+            align-items: center;
+
+            background: brown;
+            border: 2px solid;
+            border-radius: 8px;
+            height: 100px;
+            width: 100px;           
+            
+
+            /* If we dont set transition property then we cant see the effect  */
+            transition: all 1s ease-in-out;
+        }
+        .box:hover{
+            /* If we dont set transition property and rotate it as 360, so we cant see the effect  */
+            /* transform: rotate(360deg); */
+            /* transform: rotate(45deg); */
+
+            /* we can also set skew property other than skew */
+            /* transform: skew(90deg); */
+
+            /* scale means make element biger as given times. Below makes box 3 times biger */
+            /* transform: scale(3); */
+
+            /* translatex moves element to given space in x-axis */
+            /* transform: translateX(300px); */
+
+            /* translatey moves element to given space in y-axis */
+            /* transform: translatey(300px); */
+
+            /* translate moves element to given space in both x and y */
+            transform: translate(100px,100px);
+
+            /* transform: translate3d(100px,100px,100px); */
+            
+            /* transform: scale3d(10,2,1) */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            This is a box
+            <!-- <div>This is second box</div> -->
+        </div>
+        <!-- <div>
+            This is also box
+        </div> -->
+    </div>    
+</body>
+</html>

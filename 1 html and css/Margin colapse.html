@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin Collapse</title>
+    <style>
+        /* in below situation although we have given * padding and margin as 0 but still margin and padding of div will be 20 */
+        .box1{
+            border: 1px solid black;
+            margin: 20px;
+            padding: 20px;
+            width: 100vh;
+            height: 200px;            
+            
+        }
+        .box2{
+            width: 100vh;
+            border: 1px solid black;
+            /* box-sizing: content-box; */
+            margin: 20px;
+        }
+        *{
+            padding: 0;
+            margin: 0;   
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        This is first div        
+    </div>    
+    <div class="box2">
+        This is second div
+    </div>
+    <div>
+        <!-- Div size is shown (in chrome) as width*height -->
+        My First Name is Eeman.
+        <span>
+            <!-- Span size is shown (in chrome) as auto*auto -->
+            My Second Name is Mani
+        </span>
+    </div>
+</body>
+</html>

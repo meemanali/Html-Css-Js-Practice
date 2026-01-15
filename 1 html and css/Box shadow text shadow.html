@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            display: flex;            
+        }
+        .item{
+            margin: 25px;
+            padding: 50px;
+            font-size: 25px;
+
+            background-color: cadetblue;
+
+            /* box-shadow: offset x offset y blur-radius spread-radius color; */
+
+            /* blur-radius decreaces dearkness of shadow and spread it */
+            /* spread-radius increases spreadness of shadow and also increases spreadness of shadow */
+
+            /* below will set shadow at right x-axis x and lower y */
+            /* box-shadow: 5px 10px darkgreen; */
+            /* below will set shadow at left x-axis x and upper y */
+            /* box-shadow: -5px -10px darkgreen; */
+
+            /* box-shadow: 5px 10px 20px 1px darkgreen; */
+
+            /* we can also give rgba color instead of direct color. alpha/a in Rgba sets appearance/darkness of color. Its value must be bw 0 and 1. By default it is 1. Write rgba or rgb but give 4 values */
+
+            /* box-shadow: 5px 10px 20px 1px rgba(13, 34, 34,1); */
+
+            /* we can also give inset shadow. Inset means shadow created inn inner box, Below creates shadow in upper y and in left x */
+            /* box-shadow: inset 5px 10px 20px 1px darkgreen; */
+
+            /* below give inset shadow but in lower y and in right x */
+            /* box-shadow: inset -5px -10px 20px 1px darkgreen; */
+
+            /* we can also give two border shadows */
+            /* box-shadow: 5px 10px 20px 1px darkgreen,15px 20px 20px 1px cornflowerblue; */
+        }
+        .item h2{
+            /* text-shadow: x-axis y-axis color; */
+            /* text-shadow: 13px 17px cornflowerblue; */
+
+            /* text-shadow: x-axis y-axis blur-radius color;. Blur-radius blur the text */
+            /* text-shadow: 13px 17px 10px cornflowerblue; */
+
+            /* now the text shadow will be shown in above the text */
+            text-shadow: -13px -17px cornflowerblue;
+        }
+        #item1 h2{
+            text-shadow: 3px 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div id="item1" class="item">
+            <h2>This is h2</h2>
+            This is Item1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, provident!
+        </div>
+
+        <div class="item">
+            <h2>This is h2</h2>
+            This is Item2. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, doloremque!
+        </div>
+
+        <div class="item">
+            <h2>This is h2</h2>
+            This is Item3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, repellendus.
+        </div>
+    </div>
+</body>
+</html>

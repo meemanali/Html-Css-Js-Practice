@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        body{
+            margin: 0;
+            /* padding: 0; */
+
+            /* width: 300vw; */
+        }        
+        .container{
+            /* 2500px = 100vh */
+                        
+            /* according to my screen size */
+            /* width: 5464px; = width: 100vw;
+            height: 2500px; = height: 100vh;*/
+            
+            height: 40vh;
+            width: 40vw;
+            background-color: aqua;
+        }
+        .box{
+            height: 500px;
+            width: 500px;
+            background-color: red;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;   
+            
+            /* first we have to give a name to animation */
+            /* animation-name: myanimation; */
+
+            /* below means in how much time our animation will be completed. We can also give value in points ie 0.5 etc */
+            /* animation-duration: 2s; */
+            
+            /* below means in how many time our animation will occur. For infinite time erite infinite instead of number below */
+            /* animation-iteration-count: 4; */
+            
+            /* below mean that the value which we have given in "to" (in keyframe), when reaches then it stops animation. if we give alternate value in below then our aniamtion will end when it reaches to the value we have given */
+            /* animation-fill-mode: forwards; */            
+            
+            /* ease-in means our animation will be slower in start and then increase speed. And ease-out is alternate of it. ease-in-out means slower in start and then fast and then again slower speed of  animation */
+            /* animation-timing-function: ease-in; */
+
+            /* delay means animation starts after that delay when we refresh webpage */
+            /* animation-delay: 1s; */            
+
+            /* by setting below reverse animation starts to to from (reverse ). we also use alternate,alternate-reverse etc below */
+            /* animation-direction: reverse; */
+
+            /* by setting below reverse animation starts from to to from (reverse) and then from to to. But it starts from to. And alternate starts from from. */
+            /* animation-direction: alternate-reverse; */
+            /* animation-direction: alternate; */
+
+            /* shorthand for animation. We can skip any step if we want as we skip delay below */
+            /* aniamtion: animation-name animation-duration aniamtion-timing-funtion animation-delay animation-iteration-count aniamtion-fill-mode; */
+            /* animation: myanimation 1s ease 5 alternate; */
+        }
+        img{
+            /* we can give height and width here and also as attribute in element */
+            height: 500px;
+            width:500px;
+
+            position: relative;
+
+            /* animation: myanimation 1s ease 5 alternate; */
+            animation: myanimation2 10s ease 5 none;
+        }
+        /* we set animation with help of keyframe and name (also called identifier) of animation */
+        @keyframes myanimation {
+            from{
+                /* if we dont give from (or anyother property (which we include in to) then still it work)
+
+                /* using inherit set its width as inherit from container ie html body */
+                /* width: 500px;*/
+                height: 500px;
+                width: 500px;
+            }
+            to{
+                width: 40vw;
+                height: 40vh;
+            }
+        }
+        /* we also use animation like below. in Below that percentage is percent of time ie do that code in 0% of time we have given and then do that code (which is written in 90%) ie in 9 sec */
+        @keyframes myanimation2 {
+            0%{
+                /* height: 10vh;
+                width: 10vw; */
+
+                /* we can also give here position ie */
+                top: 50px;
+                left: 50px;
+            }
+            90%{
+                /* height: 90vh;
+                width: 90vw; */
+
+                /* we can also give here position ie */
+                top: 100px;
+                left: 100px;
+            }
+            100%{
+                /* height: 100vh;
+                width: 100vw; */
+
+                /* we can also give here position ie */
+                top: 150px;
+                left: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="box">This is me</div> -->
+        <img src="/Pictures/luxury-real-estate.jpg" alt="Real State">
+    </div>
+</body>
+</html>

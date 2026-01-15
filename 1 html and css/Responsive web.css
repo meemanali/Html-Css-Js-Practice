@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+/* if we set width and height of logo class and it set W and H of logo div other than of img */
+/* .logo{
+    width: 100px;
+    height: 100px;    
+} */
+#logo{
+    margin: 3px 10px;
+}
+#logo img{
+    width: 60px;
+    height: 60px;
+
+    margin: 3px 10px;
+}
+#navbar{
+    /* border: 2px solid; */
+    /* justify-content: center; */
+    display: flex;
+    align-items: center;
+}
+#navbar ul{
+    display: flex;
+}
+#navbar ul li{
+    display: flex;
+    margin: 0px 4px;
+    font-size: 15px;
+}

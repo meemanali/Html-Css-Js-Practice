@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        /* Media queries are used to make our page responsive. It is like if condition */
+
+        .box1{
+            font-size: 25px;
+            background-color: darkolivegreen;
+            display: none;
+        }
+        .box2{
+            font-size: 25px;
+            background-color: darkslategray;
+            display: none;
+        }
+        .box3{
+            font-size: 25px;
+            background-color: darkslategray;
+            display: none;
+        }
+        /* below means when width of screen reaches to 400px then apply following actions */
+        /* @media(max-width:400px){
+            .box1{
+                display: block;
+            }
+        } */
+
+        /* below means when width of screen is between 400px and 600px then apply following actions */
+        @media(min-width:400px) and (max-width:600px){
+            .box2{
+                display: block;
+                background-color: dodgerblue;                
+            }
+        }
+
+        /* when box3's display's setted to block then box2 hides here */
+        @media(min-width:600px) and (max-width:800px){
+            .box3{
+                display: block;
+                background-color: gold;
+            }
+        }
+
+        .container{
+            background-color: red;
+            height: 50vh;        
+        }
+        /* below means when width of screen increases from 800px then apply following actions */
+        /* we can also give other condition like only screen. It is also a condition */
+        /* @media screen and (min-width: 800px) {
+            body{
+                background-color: brown;
+            }
+            .container{
+                background-color: cornflowerblue;
+                color: black;
+            }
+        }      */
+        /* below means when width of screen will decrease from 800px then apply following actions */
+        /* @media only screen and (max-width: 800px) {
+                   
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, mollitia tempora deleniti ad magni ut quod, placeat, necessitatibus repellendus doloribus repellat enim sint? Commodi qui quas praesentium cum a iusto ratione quae sunt optio.
+    </div>    
+    <!-- <div class="box1">This is box1</div> -->
+    <div class="box2">This is box2</div>
+    <div class="box3">This is box3</div>
+</body>
+</html>

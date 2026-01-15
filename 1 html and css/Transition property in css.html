@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            background-color: green;
+            height: 500px;
+        }
+        .box{
+            border: 1px solid black;
+            display: inline-block;
+
+            /* transform-origin: 0; */
+            /* transform: translate(134px,134px) set the position of that element in x and y direction */
+            /* rotate rotated the element as X,Y or Z */
+            /* transform: translate(134px,134px) rotate(45deg);
+            transform: scale(1);
+            transform: scaleX(4);
+            transform: scaleY(2);
+            transform: skew(10deg,10deg); */
+        }
+        /* #btn{
+            background-color: red;
+            size: 1000px;
+            transform: translate(200px,-200px);
+        } */
+        img{
+            /* width: 80vh; */
+            /* width: 546px; */
+            /* transition-property set the property to which property we will used for transition (below we use width property for transiton) */
+            /* transition-property: width ; */
+
+            /* duration means the time in which transition occur */
+            /* transition-duration: 2s; */
+
+            /* below sets how transition occur (ease means at start it speedy then it become slowly) */
+            /* transition-timing-function: ease-in; */
+
+            /* delay means what time after transition starts */
+            /* transition-delay: 2s; */
+
+            /* below is shorthand property for transition. Last one is delay */            
+            transition: width 1s ease-in , height 4s ease-in ;
+        }
+        /* img:hover{
+            width: 146px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <img id="myimage" src="/Pictures/images(98).jpg" alt="Rose Picture"> 
+        </div>
+    </div>    
+    <button id="btn">Toggle</button>           
+</body>
+<script>
+    myimage.style.width = '146px';
+    myimage.style.height = '50px';
+    btn.addEventListener("click", ()=>{
+        myimage.style.height = '850px';
+        if(myimage.style.width === '546px'){
+            myimage.style.width = "146px";
+        }
+        else if(myimage.style.width === '146px'){
+            myimage.style.width === "546px";
+        }
+    })
+</script>
+</html>

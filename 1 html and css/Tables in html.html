@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables in html</title>
+    <style>
+        /* *{
+            border: 1px solid;
+        } */
+        table{
+            border: 1px solid;            
+        }                        
+    </style>
+</head>
+
+<body>
+    <span>
+        <table style="text-align: center;">
+            <caption>My First Table I html</caption>
+            <!-- <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>FName</th>
+                     here colspan represents column spaned by column header,below 2 columns will be spanned by Roll number column
+                    <th colspan="2">Roll Number</th>
+                    <th>Marks</th> 
+                </tr>                           
+            </thead> -->
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>FName</th>
+                    <!-- here colspan represents column spaned by column header,below 2 columns will be spanned by Roll number column -->
+                    <th colspan="2">Roll Number</th>
+                    <!-- <th>Marks</th> -->
+                </tr>         
+                <tr>
+                    <td>Eeman</td>
+                    <td>Sajid</td>
+                    <td colspan="2">2001</td>
+                    <!-- If we leave some line here then on web page empty space will be shown -->
+                    <!-- <td>400</td> -->
+                </tr>
+                <tr>
+                    <td>Mani</td>
+                    <td>Sajid</td>
+                    <td>2001</td>
+                    <td>500</td>
+                    <!-- here 600 is extra and ranges out of number of columns
+                         so it will be written outside table -->
+                    <!-- <td>600</td>                   -->
+                </tr>
+                <tr>
+                    <td>Ali</td>
+                    <td>Sajid</td>
+                    <td>2001</td>
+                    <td>600</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </span>
+
+    <table style="text-align: center;">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>F Name</th>
+                <th colspan="2">Email</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Eeman</td>
+                <td>Danish</td>
+                <td>memanali72@gmail.com</td>
+            </tr>
+            <tr>                
+                <td>Danish</td>
+                <td>meena</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

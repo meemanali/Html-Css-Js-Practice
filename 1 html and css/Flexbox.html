@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        /* if we dont give m0 and p0 then by giving container 100vh, we have to scroll the screen */
+
+        /* flex-direction will not work until we set display as flex. when we set an item as flex then that item become inline. that element which we give flex becomes flex container and elements inside it called flex items */
+        /* some properties r used for flex container and some r used for flex items */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            border: 2px solid;
+
+            /* initializing container element as flex box */
+            display: flex;
+
+
+            /* by default flex-direction is row */
+            /* row-reverse set items in row but in opposite direction of english row ie they start in urdu row */
+            flex-direction: row-reverse;
+            flex-direction: column-reverse;
+            flex-direction: row;
+
+            /* wrap will wrap items to new line when we decrease window screen size. but it will if we give unit as vh or vw helps in responsiveness. by default it is no wrap */
+            flex-wrap: wrap;
+            /* wrap reverse works from bottom to top */
+            /* flex-wrap: wrap-reverse; */
+
+            /* short hand for flex box */
+            /* flex-flow: row wrap; */
+
+
+            /* height: 200vh; */
+            height: 100vh;
+            background-color: lightblue;
+
+            /* use of justify-content and align-items will set content in center of screen */
+            /* below will set contents to center (only horizontally) */
+            /* justify-content: center; */
+            /* justify-content: space-between; */
+
+            /* below will set contents to center (only verticaly) */
+            /* align-items: center; */
+            /* align-items: flex-end; */
+            /* align-items: stretch; */
+
+            /* when we decrease window size (if height is more than 100vh) then align-items will create a gap bw items of container. But align-content will not create gap(spaces). If we dont set align-item and justify-content then they are verticaly centre by align content */            
+            align-content: center;
+
+            /* it will move content to end of container (if wrap-reverse is given then it will move to start, means in top line) */
+            /* align-items:flex-end; */
+
+
+
+        }
+
+        .box1 {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+
+            /* flex item properties: */            
+
+            /* setting order of an item let that item to appear on that item (ie element having greater order value comes on last). By default order of an item is 0. As other item has an order 0 so it will appear on last */
+            /* order: 1; */
+
+            /* align-self set position of only that item */
+            align-self: flex-end;
+            /* below set this element in start*/
+            align-self: flex-start;
+            /* below sets in vertically centre */
+            align-self: center;
+
+            /* it increases its width rapidly than other elements. an item having value flex-grow: 3; will increase more rapidly as compare to flex-grow: 2;. -ve numbers are invalid here. (depends of flex-direction that whether it has to increase its width or height) */
+            flex-grow: 2;
+
+            /* flex-shrink is like flex-grow but an item having greater value will shrink more rapidly (depends on value given) when shrinken (decreasing width) */
+            /* similarly like flex-grow, flex-shrink shrinks the item */
+            flex-shrink: 2;
+            
+            /* flex-basis is neither width nor hieght */
+            /* when flex:direction is set to row then flex-basis will control width */
+            /* when flex:direction is set to column then flex-basis will control hieght */
+            flex-basis: 300px;
+
+            /* short hand for flex item properties is: flex: grow shrink basis; */
+            /* flex: 2 2 300px; */
+        }
+
+        .box2 {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+
+            flex-grow: 1;
+
+            /* flex-shrink: 1; */
+        }
+
+        .box3 {
+            height: 200px;
+            width: 200px;
+            background-color: lime;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">This is box1</div>
+        <div class="box2">This is box2</div>
+        <div class="box3">This is box3</div>
+    </div>
+</body>
+
+</html>

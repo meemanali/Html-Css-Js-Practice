@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before and after pseudo selectors</title>
+
+    <style>
+        .container::before{
+            border: 2px solid cadetblue;            
+            content: '"Before pseudo class"'; 
+
+            /* content: '"Eema"'; */
+            /* prints "Eeman" */
+
+            /* content: "'Eeman'"; */ 
+            /* prints 'Eeman' */
+        }
+        .container::after{
+            border: 2px solid cadetblue;            
+            content: '"After pseudo class"';
+        }
+        .container{
+            /* display: inline; */
+            border: 2px solid darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">Eeman</div>
+</body>
+</html>

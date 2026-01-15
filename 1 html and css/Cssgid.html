@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- if we write nothing in title, then in title's palce url of this webpage will be shown -->
+    <title>Grid</title>
+    <style>
+        /* grid-row-gap is gap bw rows and grid-column-gap is gap bw columns */
+        .container {            
+            background-color: chartreuse;
+            height: 80vh;
+
+            display: grid;
+
+            /* grid-template-columns is used to set number of columns. The more times we give auto keyword, the more number of columns increases */
+            grid-template-columns: auto auto auto;
+            grid-template-columns: 50px auto 50px;
+            grid-template-columns: 50px 50px auto;
+            grid-template-columns: 10px 20px 30px 40px;
+
+            /* grid-template-rows sets the height of rows */
+            grid-template-rows: 100px 200px 100px;
+
+            /* grid-column will work when we have given grid-template-columns */
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
+            /* shorhand for using grid-row-gap and grid-column-gap is grid-gap. first value represents row gap and second column gap */
+            grid-gap: 10px 20px;
+            /* if we give only 1 value in grid gap then it will be set for both row gap and column gap i.e below will set row and column gap as 50px */
+            grid-gap: 10px;
+        }
+
+        /* below will apply properties to all these 4 classe */
+        .item,
+        .item2,
+        .item3,
+        .item4,
+        .item5,
+        .item6,
+        .item7,
+        .item8 {
+            background-color: cornflowerblue;
+            border: 1px solid black;
+        }
+
+        .item {
+            /* grid-row means span 1 to 3 rows */
+            /* grid-row: 1/4; */
+            /* grid-column means span 1 to 3 columns */
+            grid-column: 1/3;
+        }
+        .item4{
+            /* below means it will span 4 rows and 3 columns */
+            grid-row: 1 /span 4;
+            grid-column: 1/span 3;
+
+            grid-row: 2 /span 4;
+            grid-column: 2/span 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+        <div class="item7">7</div>
+        <div class="item8">8</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* with below code we can set block element on same line */
+        /* img{
+            width: 50px;
+            height: 50px;
+
+            float: left;
+        }
+        h3{
+            float: left; 
+        }*/
+
+        header{
+            width: 1000px;
+            margin: 3px auto;
+            border: 1px solid cadetblue;
+        }
+        img {
+            /* when we set mergin auto then that item will go to center of its parent */
+            width: 100px;
+            height: 100px;
+            margin: auto;
+
+            /* if we dont set this as block then it will not go to center */
+            display: block;
+        }
+
+        h3 {
+            margin: 0px;
+            text-align: center;
+        }
+        .box{
+            border: 1px solid darkblue;
+            background-color: cornflowerblue;
+            text-align: center;
+            padding: 30px;
+            display: inline-block;
+            width: 25%;
+            margin: auto;
+            box-sizing: border-box;
+        }        
+        .container{
+            border: 1px solid teal;            
+            width: 1000px;
+            margin: auto;
+            text-align: center;            
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="/Pictures/images(96).jpg" alt=""> 
+    <h3>this is h3</h3> -->
+
+    <header>
+        <img src="/Pictures/images(96).jpg" alt="">
+        <h3>Welcome To Rose's Website</h3>
+    </header>
+    <div class="container">
+        <div class="box">
+            <h2>Heading 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, quae animi maxime neque doloribus quisquam qui aliquam vero fugiat quibusdam?</p>
+        </div>        
+        <div class="box">
+            <h2>Heading 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, quae animi maxime neque doloribus quisquam qui aliquam vero fugiat quibusdam?</p>
+        </div>        
+        <div class="box">
+            <h2>Heading 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, quae animi maxime neque doloribus quisquam qui aliquam vero fugiat quibusdam?</p>
+        </div>        
+        <img src="/Pictures/images(98).jpg" alt="">
+    </div>
+</body>
+
+</html>

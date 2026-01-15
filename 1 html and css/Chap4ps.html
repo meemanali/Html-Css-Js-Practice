@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chap4 PS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* border: 0px; */
+        }
+
+        header {
+            background-color: black;
+            color: skyblue;
+            height: 10vh;
+
+            /* if we give margin to header then white space will be shown outside */
+            /* margin: 100px; */
+        }
+        
+        /* below means a inside li inside ul inside navigationbar */
+        .navigationbar ul li a{
+            color: white;            
+            /* below will remove underline from a (link) */
+            text-decoration: none;            
+        }
+
+        .navigationbar ul li{   
+            font-size: 18px;
+            margin: 20px 20px;         
+            display: inline;
+        }
+        .navigationbar p{
+            text-align: center;
+        }
+        
+        /* .navigationbar{
+            background-color: black;            
+        } */
+
+        .left {
+            display: inline-block;
+            background-color: green;
+            /* width: 100vh; */
+            width: 50%;
+            height: 85vh;
+
+        }
+
+        .right {
+            display: inline-block;
+            background-color: red;
+            /* width: 100vh; */
+            width: 50%;
+            height: 85vh;
+        }
+        footer{
+            text-align: center;
+            font-family: monospace;
+            font-size: 3vh;
+            background-color: black;
+            color: white;
+            height: 5vh;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navigationbar">
+        <p>This is header with color black.</p>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </header>
+    <!-- we have to remove space bw left div and right div to remove gap bw them in web page -->
+    <div class="left">
+        This is left div with green color
+    </div><div class="right">
+        This is right div with red color
+    </div>
+    <!-- &copy is used for copyright symbol -->
+    <footer><p class="copyright">This is footer. We have &copy; copyright</p></footer>
+</body>
+
+</html>

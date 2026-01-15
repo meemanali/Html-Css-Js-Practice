@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practising css</title>
+    
+
+    <!-- there r 3 methods to add css to html: 
+            i. create .css file and add it in html with link tag called external css
+           ii. create style tag in head called internal css
+          iii. write style attribute in the element u want styling called inline css -->
+
+        <!-- ist method -->
+        <link rel="stylesheet" href="style.css">        
+
+        <!-- secnod method -->
+    <!-- <style>
+        /* we access id with # */
+        
+        #first{
+            background-color: green;
+            color: honeydew;
+        }        
+        /* we access class with . */
+        .red{
+            background-color: purple;
+            color: honeydew;
+        }
+    </style> -->
+    
+
+    <!-- Inline css has greatest priority. Then internal css has and then external css. But if we write !important then that css will take priority -->
+
+
+</head>
+
+<body>
+    <div id = "first">
+        First div
+    </div>
+
+        <!-- 3rd method -->
+    <!-- <div id = "second" style="background-color: lightskyblue;">
+        Second div
+    </div> -->
+
+    <div id = "third">
+        Third div
+    </div>
+    <section class="red">
+        Red section
+    </section>
+    <section class="red bgblue borderpurple">
+        Red bgblue borderpurple section
+    </section>
+</body>
+
+</html>

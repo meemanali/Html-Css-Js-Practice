@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visibility and Z-index</title>
+    
+    <style>
+        body{
+            /* margin: 5px; */
+            /* by default its padding is 0 but margin is 8px */
+            /* padding: 0px; */
+            border: 5px solid teal;
+        }
+        .box{
+            width: 170px;
+            height: 120px;
+            border: 2px solid;
+        }
+        /* z index works when we want to set one element into another element (ie collapsing). It works only when we set element's position other than static which is default position of an element ie position: fixed, absolute, sticky or relative */
+        /* the item having greater value of z index comes on front of other elements  */
+        /* note:
+        if both elements have same value of z index then if both elements are position:relative (or any other) then box2 will come front of box1. But if we dont set box2 position:relative then box1 will come front of box2*/
+        #box1{
+            background-color: brown;
+            /* in below as box1 has greater z index therefore it comes front of box2  */
+            z-index: 1;
+            position: relative;
+            top: 100px;
+        }
+        #box2{
+            background-color: cadetblue;
+            position: relative;
+            z-index: 1;
+            /* by default visibility is visible. If we visibility: hidden; then that item will be hidden but its place still reserved. But if we want to also remove its place then we set display:none;  */
+            /* visibility: hidden; */
+        }
+        #box3{
+            background-color: darkblue;
+        }
+        #box4{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- .box#box$*4 -->
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box" id="box4"></div>
+
+</body>
+</html>

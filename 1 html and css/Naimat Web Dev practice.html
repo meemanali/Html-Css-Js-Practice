@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Udemy course -->
+
+    <!-- 
+
+        SPACING SYSTEM:
+            2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+        FONT SIZE SYSTEM:
+            10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+     -->
+     
+
+
+    <style>
+        /* <!-- we can use tools provided by chrome also called dev tools by right click > inspect. And also by pressing View > developer-->
+<!--  there's a style tab which shows styles (css) applied to the element. we can also add styles/css properties in that style tab-->
+<!--  -->
+
+
+
+<!-- id selectors have highest priority, and if we have multilple id selectors then last one will be applied. But kept in mind that inline css have even higher priority over id selectors. And properties with "important" keyword have even higher priority ie 
+    color: blueviolet !important;
+-->
+<!-- after id, class have priority, after it element selectors and in last we have universal selectors -->
+<!-- universal selectors have lowest priorities -->
+
+<!-- in element selectors, those selectors having pseudo classes have higher priority as compare to element selectors with no pseudo selectors --> */
+
+/* selectors which r more complex r more likely to applied ie first one is more likely to applied
+.main div a:active{
+
+}
+.main a{
+
+}
+
+
+*/
+
+/* adding dimension to webiste helps in developing responsive webpage. ie giving width in % */
+
+/* we can set block, and inline behaviour of elements ie display: block; and display: inline; and also display: inline-block; */
+
+/* we can also add letter-spacing: 0.5 property text   */
+
+
+/* diffchecker is website which tells diff bw codes */
+
+        
+
+        body{
+            
+            color: blue;
+        }
+        /* below will target only real links ie which have href attributes */
+        a:link{
+            color: #aaa;
+            text-decoration: none;
+        }
+        a{
+            color: red;
+        }
+        /* below will target links which r clicked */
+        a:visited{ /* this visited ia cellel pseudo class*/
+            color: grey;
+        }
+        a:hover{
+            color: blueviolet;
+            text-decoration: underline dotted red;
+        }
+        /* note below */
+        a:hover, a:active{
+            color: blueviolet;
+            text-decoration: underline dotted red;
+        }
+
+        p{
+            text-transform: uppercase;            
+        }
+        /* pseudo classes r writtne with one colon : */
+        ul:last-child{
+            color: blueviolet;            
+        }
+
+        /* pseudo elements r written with 2 colons :: . these r not part of html, but we can use them in css */
+        h1::first-letter{ /* means first letter of h1*/
+            font-size: 30px;
+        }
+        p::first-line{
+            color: red;
+        }
+        /* simple pseudo elements have more priority than sibling pseudo elements  */
+        /* for selecting adjacent/sibling element, we use + */
+        p+h1 ::first-line{ /* n space is required after ::*/
+            font-size: 30px;
+            color: darkgreen;
+        }
+
+        h1::after{ /* means target that first element that come after p. */
+            font-size: 50px;
+
+            /* bgc is not workign */
+            /* background-color: black; */
+        }
+
+
+
+        /* create a container class and give elements inside it. first 2 properties will set this container to center of page */
+        .container{
+            width: 200px;
+            margin: 0 auto; /*we can also give another value instead of 0. 0 is value of upper and lower margin and auto is eft and right margin*/
+
+            /* we can also write below 2 line for above one line */
+            /* below 2 line means left and right margin must be of same size */
+            margin-left: auto;
+            margin-right: auto;
+
+
+            
+            
+        }
+
+        .button{
+            /* to set an element on an absolute position ie on position u want, use position:absolute; */
+
+            /* put this button inside a container and give  position: relative; in that container. Now if we resize screen then this button will also move according to top,bottom etc we have given with respect to that container. We normally use absolute postioning for small elements, for making layotus we use other tevhniques.
+
+            but that parent ontainer must be its first parent (may be) 
+
+            we can also give -ve values to top,bottom etc
+            
+            */
+            position: absolute; 
+            width: 100px;
+            height: 100px; /* these 50 pixels r related to vierwport ie when open browser and we see page. If we want to set with respect to some other parent element then give, position: relative; in parent element which u want to set this element according to*/
+            top: 300px;
+
+            /* if we give both top and bottom without setting width and height then this button height will streched to whole screen execpt 10px from top and bottom */
+            /* top: 10px; */
+            /* bottom: 10px; */
+
+        }
+
+        
+        </style>
+
+        
+</head>
+
+
+
+<!-- ctrl + U opens code of web page in new tab -->
+<!-- window + . for showing emojies. it is provided by OS -->
+
+<body>
+    <a href="">a tag with href</a>
+    <a>a tag without href</a>
+
+
+<!-- below strong tag also gets properties of p tag we have defined in css. it is called inheritance, means child tag contains all properties of parent element. thus we can also give properties in body tag and thus all elements in body tag will get that properties. but if we given same property in also element selector then property in element selector will be applied because it has higher priority
+    not all properties are inherited, mostly related to text r inherited ie
+        border-top: "10dp" // this property is applied to only body tag
+    to add border to all elements use * selector    
+
+    -->
+
+<!-- margin collapse of elements in web page -->
+
+    <!-- <p>This is a p tag</p>
+
+    <p>This is a p tag written by eeman s/o <strong>Danish</strong>.</p> 
+
+    <button class="button">Click</button>
+
+    <h1>This is h1</h1>
+
+    <p>This is p after h1</p> -->
+
+
+<!-- use visual heirarichy carefully. separate sections / blocks which r not related and decrease gap bw elements which r related -->
+
+
+
+
+<!-- ----------------------- -->
+
+<!--
+     ui is user interface and ux means user experiance.
+    ui is visual presentation of a product. us is overall experiance the user has while interacting product
+    -->
+
+
+</body>
+</html>

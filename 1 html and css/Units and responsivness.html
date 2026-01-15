@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiveness</title>
+    
+    <!-- it also shows in web page -->
+    <!-- <p style="color: red; background-color: royalblue;">This is p inside head</p> -->
+    <style>
+        html{
+            border: 3px solid brown;
+
+            font-size: 25px;
+            width: 1000px;
+        }        
+        /* *{
+            border: 1px solid;
+        } */
+        /* body{
+            border: 2px solid blue;
+        } */
+        /* head{
+            border: 2px solid purple;            
+        } */
+        .container{
+            /* this has 16px font size by default */
+
+            border: 1px solid;
+            text-align: center;
+            padding: 5px;
+        }        
+        .img{
+            width: 10rem;
+        }
+        #first{
+            /* em unit sets element multiple times with reference to its parent container's font size. We normally use it when we want our child element to resize when our parent resizes. As its parent has 16px font size so it has 48px font size now */
+            font-size: 3em;
+
+            /* now below takes reference with respect to respect to above font size not of its parent. As above font size has value 48px so below padding got value of 96px */
+            padding: 2em;            
+        }
+        #second{
+            /* rem unit sets its value with reference to html tag's font size. Now below takes values of 50px each*/
+            font-size: 2rem;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Eeman is also known as <abbr title="Eeman">Mani</abbr>. Hover it to know more</p>
+
+    <!-- <div class="container">
+        <img class="img" src="/Pictures/black white gym pic.jpg" alt="black white gym pic.jpg">
+        <p>This is p, a block element</p>
+        <div>This is div</div>
+    </div> -->
+
+    <div class="container">
+        <div id="first">This is first div</div>
+        <div id="second">This is second div</div>
+        <div id="third">This is third div</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a.ista:hover{
+            background-color: cadetblue;
+        }
+        .seconda:hover{
+            color: red;
+        }
+        /* .seconda:visited{
+            color: crimson;
+        } */
+        a:visited{
+            color: seagreen;
+        }    
+        a:active{
+            color: gold;
+        }
+
+        /* selectors with help of attributes */
+        /* below will set a tag whose target is setted  */
+        a[target]{
+            font-size: 40px;
+            border: 1px solid steelblue;
+            color: steelblue;
+        }
+        a[target = '_self']{
+            font-size: 40px;
+            border: 1px solid sienna;
+            color: sienna;
+        }
+
+        input[type = text]{
+            padding: 20px;
+            font: 40px;
+            border: 2px solid sienna;
+            display: block;
+        }
+
+        /* below target 3rd div which comes inside span or div or anything other's */
+        div:nth-child(2){
+            border: 2px solid slateblue;
+            color: springgreen;
+        }       
+
+        /* below target 3rd li which comes inside ul or ol */
+        /* li:nth-child(3){
+            border: 2px solid slateblue;
+            color: springgreen;
+        } */
+
+        /* below target every 2nd li which comes inside ul or ol. We can also give 3n+3 something */
+        /* li:nth-child(2n+0){
+            border: 1px solid teal;
+            color: teal;
+        } */
+
+        /* below targets every odd */
+        /* li:nth-child(odd){
+            color: teal;
+        } */
+
+        /* below targets every even */
+        /* li:nth-child(even){
+            color: teal;
+        } */
+
+    </style>
+</head>
+<body>
+    <!-- <a class="ista" href="https://google.com">Google</a> -->
+    <a class="seconda" href="https://www.google.com">Google with www</a>
+
+    <a target="_blank" href="https://www.google.com">Google with www</a>
+
+    <a target="_self" href="https://www.google.com">Google with www</a>    
+
+    <br><br>
+
+    <input type="text" placeholder="Enter Your Name">
+
+    <input type="text" placeholder="Enter Your Password">
+
+    <br><br>
+
+    <button class="btn">Click</button>
+
+    <br><br>
+
+    <ul>
+        <li>First li</li>
+        <li>Second li</li>
+        <li>Third li</li>
+    </ul>
+
+    <span>
+        <div>First div</div>
+        <div>Second div</div>
+        <div>Third div</div>
+    </span>
+
+    <ul>
+        <li>First li</li>
+        <li>Second li</li>
+        <li>Third li</li>
+        <li>First li</li>
+        <li>Second li</li>
+        <li>Third li</li>
+        <li>First li</li>
+        <li>Second li</li>
+        <li>Third li</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline and block properties</title>
+    <style>
+        /* we cant name first alphabet of class as integer */
+        .inline{
+            display: inline;
+            height: 100px;
+            border: 1px solid black;                                    
+        }
+        .block{
+            display: block;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .inline-block{
+            display: inline-block;
+            height: 100px;
+            border: 1px solid black;
+        }        
+        /* display removes as item and other item will takes its place */
+        .ist-span{
+            border: 1px solid black;
+            display: none;
+        }
+        /* visibilty hides an item and other items cant tskes its place */
+        .second-span{
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Inline doesnt allow setting width, height, padding and margin.
+         it allow items to placed its right or left -->
+    <div class="inline">This is div with inline property</div>
+    <!-- Block allow setting width, height, padding and margin.
+         it doesnt allow to placed its left ot right -->
+    <div class="block">This is div with block property</div>
+    <!-- Inline-block allow items to placed its left and right.
+         and also allow to set width etc-->
+    <div class="inline-block">This is div with inline-block property</div>  
+    <br>  
+    <span class="ist-span">First Span</span>
+    <span class="second-span">Second Span</span>    
+    <span class="3rd-calass">3rd Span</span>
+</body>
+
+</html>

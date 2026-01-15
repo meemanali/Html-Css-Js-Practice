@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Properties</title>
+    <style>
+        div{
+            /* text-align property works for text as well as on buttons */
+            /* text-align: center; */
+
+            /* below will convert all staarting alphabets to capital */
+            text-transform: capitalize;
+            
+            /* below will add a line on the text.latest line will execute(work) */
+            /* text-decoration: line-through; */
+            
+            /* text-decoration: overline;             */
+            /* text-decoration: underline;             */            
+            
+            /* if we give line-height 0px then text on 2nd line overlap on the ist line */
+            /* line-height: 0.2px; */
+            line-height: 30px;
+
+        
+            /* font-size: 18px; */
+            /* in below three the last two fonts will apply if ist one will not be applied for any reason. if there is space bw name of font then use - or ' ' */
+            font-family:Arial, Helvetica, 'sans serif';
+
+
+            /* text-shadow:inherit; */
+
+            /* below will increases div height */
+            /* height: 700px; */
+        }
+        body{
+            background-image: url(/Pictures/images\(98\).jpg);
+            /* background: no-repeat; */
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+        .ist class{
+            text-align: center;
+        }                
+        .second-class{
+            /* if we set text-align property in div and also in class of div so property we given in div will work */
+            text-align: right;
+        }
+        .third-class{
+            text-align:center;
+        }
+
+        /* .img{
+            text-align: start;
+        } */
+        /* button{
+            /* align-items: center; */
+            /* font:bold; */
+            /* background-image: url(/Pictures/images\(96\).jpg); */
+            /* background-size: cover;
+        } */
+        
+    </style>
+</head>
+
+<body>
+    <!-- p*4 + tab creates four p tags -->
+    <!-- em tag emphasize or changes pattern of text -->
+
+    <div class="ist-class">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, rerum. Vel sint repellat odit quos, obcaecati fugit optio iusto error voluptatum repellendus et laudantium iste eligendi praesentium corporis maxime
+        <!-- <br> -->
+    </div>
+    <br>
+    <div class="second-class">
+        <img class="img" src="/Pictures/images(98).jpg" alt="Janan" height="450px" width="550px" >    
+    </div>
+    <div class="third-class">
+        <button>Enter</button>
+        <button>Exit</button>
+    </div>    
+</body>
+
+</html>

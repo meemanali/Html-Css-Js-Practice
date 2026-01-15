@@ -1,0 +1,11 @@
+/* we access id with # */
+        
+#third{
+    background-color: green;
+    color: honeydew;
+}        
+/* we access class with . */
+.red{
+    background-color: purple !important;
+    color: honeydew;
+}

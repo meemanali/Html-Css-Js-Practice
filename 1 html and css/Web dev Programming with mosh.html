@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* shortcuts: */
+      /* ctrl + f = for finding  */
+
+      /* ---------------------- */
+
+      /* *{ */
+      /* giving errors ie also showing comments in page */
+      /* display: inline; */
+      /* } */
+      /* 
+        body{
+            position: relative;
+        } */
+
+      /* relative selectors: means target all p after element having id product. these r slow than basic selectors. Not good for browsers if there r many p, as browsers (may be also compliers) chechks/see from right to left so first it select all p then it checks for p after id product */
+      #product ~ p {
+        color: orange;
+      }
+
+      .container {
+        /* we can also give more than 2 colors in gradient*/
+
+        /* linear gradient: */
+
+        background: linear-gradient(dodgerblue, yellow);
+
+        /* by below our gradient starts from left and ends to right  */
+        background: linear-gradient(to right, dodgerblue, yellow);
+
+        /* by below our gradient starts from top left and ends to bottom right */
+        background: linear-gradient(to bottom right, dodgerblue, yellow);
+
+        /* we can also set posiotion by giving degrees */
+        /* this % means 10% yellow and 90% blue (or means start blue from 10% and upto so on)*/
+        background: linear-gradient(45deg, dodgerblue 10%, yellow);
+
+        background: linear-gradient(dodgerblue 90%, yellow);
+
+        /* radial gradient: */
+
+        /* means in centre there will be blue and then yellow starts */
+        /* background: radial-gradient(dodgerblue, yellow); */
+
+        /* by giving circle, event if we increase width very much, centre color will not appear in oval shape it will appear in circle */
+        /* background: radial-gradient(circle, dodgerblue, yellow); */
+
+        /* background: radial-gradient(circle at top left, dodgerblue, yellow); */
+
+        /* we can also use built in gradients from google */
+
+        /* there r still some old browsers which do not understand gradient so we use this solid color as stepney ie in case if browser can't read gradient */
+        background: green;
+        background: linear-gradient(dodgerblue 90%, yellow);
+
+        width: 300px;
+        height: 300px;
+
+        /* if we set position then margin: 0 auto; will not work */
+        margin: 0 auto;
+
+        /* position: absolute; */
+      }
+
+      .borders {
+        width: 300px;
+        height: 300px;
+
+        background-color: skyblue;
+        border: 10px dotted dodgerblue;
+        border: 10px dashed dodgerblue;
+
+        /* above border properties r short hand. we can also apply border to only top,left etc */
+
+        border-top: 20px solid dodgerblue;
+
+        /* represents top right bottom left */
+        border-width: 4px 8px 12px 16px;
+
+        border-width: 4px 8px 12px; /* browser takes it as */
+        border-width: 4px 8px; /* top,bottom have 4px and right,left 8px */
+
+        /* for all 4 sides */
+        border-width: 4px;
+
+        border-style: dashed;
+
+        background-color: black;
+
+        border-radius: 50px;
+
+        /* if we have a square size div. then border-radius: 100% will make it complete cicle. 50% will also do it but use 100 */
+
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      /* we can create class for buttons in page and give to all buttons using, thus reusablity */
+
+      /* dont use shadows darkly */
+      /* use shadows to draw attention ie to username textboxs etc */
+      /* u can add shadow to button on hover so that it feels button comes closer to user */
+      /* dont need to always use black shadow u can also use another color */
+
+      .shadows {
+        width: 300px;
+        height: 300px;
+
+        background-color: cadetblue;
+
+        box-shadow: 10px; /* if we use only one value then it is for horizontal shadow. if we use +ve value, it will move shadow to right of element. -ve will move shadow to left */
+
+        box-shadow: 10px 10px; /* if we use two values, first is for horizontal and second for vertical. for second value: if we use +ve value, it will move shadow to bottom of element. -ve will move shadow to top of elemenet */
+
+        box-shadow: 10px 10px grey; /* we can also use rgb or can use hex colors*/
+
+        box-shadow: 10px 10px 20px grey; /* this 3rd value represents intensity of shadow. ie more big this value is, more light our shadow will be */
+
+        box-shadow: 0 0 10px grey; /* it adds shadows to centre, which creates beautiful look */
+      }
+
+      /* we can also add shadows to texts. mostly use in texts on images */
+      h1 {
+        text-shadow: 3px 3px 5px white;
+
+        /* a light black color */
+        /* color: rgba(0, 0, 0, 0.2); */
+      }
+
+      /* margin collapse in css */
+
+      /* total/actual size of an element is: size + padding + border sizes etc. margin is excluded */
+
+      .box_sizing {
+        width: 200px;
+        height: 200px;
+        background: #0004;
+        padding: 10px;
+
+        /* if we give border-box then total size of element will be 200 by 200. ie it will decrease size of content area and includes padding size in it. by default it is content-box, which increasre total size of box by keeping size of content as 200 by 200 and includes extra space for paddings and margins */
+        box-sizing: content-box;
+        box-sizing: border-box;
+      }
+
+      /* universal selector do not apply to pseudo elements. to use for it we use: */
+      *,
+      *::after,
+      * ::before {
+        font-family: cursive, sans-serif;
+      }
+
+      /* to see styles applied to element in chrome, see styles, computed buttons stc  */
+
+      /* width and height properties can be apply to only block level elements not on inline. for inline we first set them to inline-block level by 'display' function then we do */
+
+      /* remove spaces bw elements, then there will be no space bw elements in page. we can alo use a website to remove these */
+
+      /* overflow occurs when our content size gets bigger than size of container we given */
+      .overflow {
+        width: 200px;
+        height: 200px;
+        border: 3px solid green;
+
+        /* by default it is visible */
+        overflow: hidden; /* hidden hides the actual content */
+        overflow: scroll; /* shows a scroll bar on both horizontal and vertical */
+        overflow: auto; /* shows scroll bar only when content overflows */
+
+        overflow: hidden auto; /* first for horizontal and second for vertical */
+
+        /* ovewrflow is short hand of overflow-x and overflow-y */
+      }
+
+      /* measuring units: 2 types.
+         absolute and relative 
+         absolute r fix eg we resize our screen but this will not effect size of elements having these sizes. ie px, inch, cm etc
+         relative r relative to something ie %, vh, vw etc
+
+         */
+
+      html {
+        font-size: 62.5%; /* means 62.5% of 16px  = 10px*/
+
+        /* border: 3px solid gold; */
+
+        position: relative;
+      }
+
+      .sizes {
+        width: 50%; /* means set width as 50 % of parent element. if we resize browser, then this size also changes. */
+        background: #0007;
+        height: 100%; /* by default height of block level elements is 0 and width is 100 %. when we insert content in it then it starts increasing its height. therefore % here is not working so we use vh*/
+
+        /* em related to font size of element. if element do not have then it looks for its parent element. if it neither have any font size given then it used default font size given by browser to html ie 16px */
+
+        /* benifit of using rem, em is when user change font size , then width, height etc also adjust according to it */
+
+        width: 10em; /* means 10 * 16 = 160px */
+
+        width: 10rem; /* means 10 * font size of root element ie html element. 10 * 10 = 100px */
+      }
+
+      /* by default position of all elements is static */
+
+      /* there r 3 axis, x,y and z */
+      /* by default z-index is 0. we can increase z-index so that it can come close to us and the element overlapse it */
+
+      .box1 {
+        width: 20rem;
+        height: 20rem;
+        background: rgb(37, 31, 31);
+
+        /* means relative to its normal position */
+        position: relative;
+
+        /* we can also give -ve value here */
+        /* left: 10rem;  */
+
+        /* means set item relative to its container . for this we have to give position: relative; in its container element. if we not give then it takes view port as its container (may be) */
+        /* when we set it absolute, then box2 comes on place of box1 and box1 comes over box2 */
+        position: absolute;
+
+        bottom: 0; /* while giving values in 0, then no need of unit*/
+        left: 200px;
+
+        /* this will fix the element on view port. even if we scroll down */
+        /* position: fixed; */
+
+        /* below will set width to whole view port, just add 2 rem margins on left and right */
+        /* left: 2rem;
+            right: 2rem;
+            width: auto; */
+      }
+      .box2 {
+        width: 20rem;
+        height: 20rem;
+        background: rgb(179, 12, 12);
+      }
+      .box3 {
+        width: 20rem;
+        height: 20rem;
+        background: rgb(76, 12, 179);
+
+        /* cursor: n-resize; */
+        cursor: none;
+
+        /* if curson file will not found then default cursor will be applied */
+        cursor: url("curson.ico"), default;
+      }
+
+      .tweet {
+        border: 2px solid gold;
+      }
+      .avatar {
+        width: 10rem;
+        height: 10rem;
+        background: lightslategray;
+
+        /* by setting flaot: left; now our texts will appear next to avatar class. we can also set to float: right; which will move avatar to right of container and our text will still present on same line where avatar is */
+        float: left;
+      }
+      /* if we want that second paragraph will not show on line then we use clear property in paragraph2 */
+      .p2 {
+        clear: left;
+      }
+      /* floating elements has a problem ie parent containers do not see/count floating elements ie when we remove paragraph2 then container (ie tweet class) of avatar do not count it in this case tweet's border will collapse to onle height of p1 and our avatar (ie floating element) will overflow from tweet class */
+      /* one solution to this is below (this is good solution because we donot have to increase a sperate div for increasing border and keeping avatar inisde tweet, and thus good for search engines): */
+      .tweet::after {
+        /* content: 'a quick brown fox jumps over a lazy dog'; */
+        content: ""; /* if we give some text in content then it will show below avatar and increases our border */
+        display: block;
+        clear: left;
+      }
+
+      /* below will right content inside avatar */
+      /* .avatar::after{
+            content: 'a quick brown fox jumps over a lazy dog';
+            display: block;
+            clear: left;
+         } */
+
+      .flexbox {
+        border: 2px solid goldenrod;
+
+        display: flex;
+
+        /* we use below 2  */
+        /* align-items: ; */ /* used for vertically adjusting elements */
+        /* justify-content: ; */ /* used for horizontally */
+
+        flex-direction: column-reverse; /* by default is row*/
+        flex-direction: row;
+
+        justify-content: flex-end;
+
+        justify-content: space-evenly;
+
+        justify-content: space-around;
+
+        justify-content: center;
+
+        align-items: flex-end; /* nothing happens cause even container (ie element having flexbox class) is flex but still it appears as block level element so it only extends according to its child , thus we increase container height */
+
+        height: 55rem; /* if we give less than heights of child elements then child will overflow */
+
+        align-items: center;
+
+        /* default behaviour of flex child elements is that when we increase no of elements then they decrese their size to appear in a line. we change it by flex-wrap */
+
+        flex-wrap: wrap /* default is no-wrap*/;
+
+        /* bu now line gap bw these childs is not same so we use  */
+
+        /* align-content: center; */
+
+        /* if we have elements in just a line then do not need of flex-wrap and align-content properties */
+
+        /* some properties to be applied to flex elements */
+
+        flex-basis: 10rem; /* sets width/hieght of flex elements. this has more priority over width/height ptoperties. if elements r setted as row then it set width if column then sets height */
+      }
+      .box {
+        width: 15rem;
+        height: 15rem;
+        background: gold;
+        margin: 10px;
+
+        flex-grow: 4; /* we have given other boxes more value so these will grow more than box_one */
+      }
+      /* to give propertries to only one box u can use a seprate class/id for it*/
+      .box_one {
+        /* if we want to move only one of the elements then we use align-self */
+        align-self: flex-start; /* if it has align-content property then it will not work*/
+
+        flex-grow: 1; /* allows flex items to grow if there is space available. by default it is 0. */
+
+        flex-shrink: 1; /* default is 1. opposite of grow. allows items to shrink if ther's lack of space or when we decrease space*/
+        /* if we give box_one as 0 and other boxes other values then box_one will not get shrink but others do */
+
+        flex: 0; /* short hand. first value is flex grow, flex shrink, flex basis */
+      }
+
+      /* flex represent items in row/column. grid used to show in both rows and columns ie in table. both r layouts */
+      .grid {
+        display: grid;
+
+        height: 500px;
+
+        /* we can see details of these columns and rows in dev tools in chrome.  */
+        grid-template-rows: 100px 100px 100px; /* we can also give values in % ie: 20% 30% 30%. but this % is based on width of container, so element can get larger W or H than container. for this we use a unit called fraction 'fr' : 20fr 30fr 30fr means 20,30,30 % of avaialabe space not of whole container */
+        grid-template-rows: 100px auto 100px; /* auto means take all available space but if we decrease size of browser then 1st and 3rd row will remain of 100px but 2nd row will start decreasing */
+
+        grid-template-columns: 100px 100px;
+        grid-template-columns: repeat(
+          2,
+          100px
+        ); /* to reduce repeating, we use repear func. it is same as above line */
+
+        grid-template: repeat(3, 100px) / repeat(2, 100px); /* short hand of column and rows*/
+
+        border: 2px solid;
+
+        /* these boxes setted at top left corner, to adjust them we use justify-content (for setting horizontally) and align-items (for vertically) */
+
+        justify-items: center; /* for elements of grid*/
+        align-items: center;
+
+        justify-content: center; /* for location of grid*/
+        align-content: center;
+
+        row-gap: 10px;
+        column-gap: 20px;
+
+        gap: 10px 20px;
+
+        /* we can also replace these by giving name to all the areas of grid */
+        grid-template-areas: "1st 2nd" "3rd 4th" "5th 6th"; /* we can give any names*/
+      }
+
+      /* select all elements of grid */
+      .box-for-grid {
+        /* if we not give H and W then by default values of W and H for these boxes r stretch ie they fit in the grid boxes:
+            justify-items: center;
+            align-items: center; */
+
+        width: 50px;
+        height: 50px;
+        background-color: red;
+      }
+
+      .box-for-grid-1 {
+        /* for replacing items of grid */
+
+        grid-column: 2; /* now it takes place in second column. and other items moves afterward it */
+
+        grid-column: 1 / 3; /* means span this element from 1st column to 3rd*/
+        grid-column: 1 / -1; /* -1 means last column, so here 3 or -1 is same */
+        grid-column: 1 / span 2; /* works same as above lines */
+
+        grid-row: 2; /* moves this element to 2nd row and other elements starts after it*/
+        grid-row: 2 / 4; /* now this element takes 2 rows*/
+
+        grid-area: 1 / 1 / 1 / 3; /* first 2 number represents start and last 2 represents end of element */
+
+        /* we can also replace these by giving name to all the areas of grid */
+        grid-area: 2nd; /* we donot need qoutes, if we give then not work. when we declared our area names, if 2nd comes twice then this element will take both areas */
+      }
+      .visibility {
+        background-color: skyblue;
+        border: 2px solid;
+        /* visibility: hidden; item will remain on page but we can't see it */
+
+        /* display: hidden; there's no property hidden in display func */
+        display: none; /* it even removes item from page */
+      }
+
+      /* media queries used to resize page according to screen size */
+
+      .container-mq {
+        display: flex;
+        flex-direction: column;
+
+        font-size: 20px;
+      }
+      /* ideal length on line is 50 to 60 chars in comp */
+      .box-mq {
+        background-color: dodgerblue;
+      }
+      .box-mq:nth-of-type(2) {
+        /*target 2nd element having class box-mq */
+        background-color: yellow;
+      }
+
+      /* for screens: */
+
+      /* below style will only apply if this condition becomes true */
+      @media screen and (min-width: 600px) and (max-width: 900px) {
+        /* what if W,H of screens eg mobile,comp,tablet changes? thus */
+        .container-mq {
+          flex-direction: row;
+        }
+        .box-mq {
+          background: whitesmoke;
+        }
+      }
+
+      /* for printers: */
+      @media print {
+        body {
+          font-size: 12pt; /* 12 point*/
+        }
+        .box-mq {
+          padding: 10px;
+        }
+      }
+
+      /* using web fonts (other fonts r called web safe fonts which r availble on almost all computers ie serif, san-serif, monospce, arial etc) has a problem, when browser is loading or it can't load font then it shows with another font which is called flash of unstyled text. browser stores web fonts and some images in its cache memory. we can use disable cache option in developer tools. after disabling it or using web page with slow internet (u can select in dev tools) helps u see this */
+
+      /* we can use fontsquirrel.com, fonts.com, myfonts.com for downlaoding web fonts in our computer */
+      /* we can also search for websites providing links for fonts ie google fonts. they r online fonts */
+      /* we can use google font, adobe fonts, fonts.com, fontdeck.com for getting links to add these fonts in our web page (by add these links in font property of an element in css). in this case we donont have to downlaod these fonts. if we copy that link and open in brpwser then it shows a list of @font-face rules. this link also contains properties for font, we can also edit it. so our font will be getted from another webpage of google */
+      /* different operating sys have diff default fonts, so our font of web may vary for diff OS. so we can also use system font of that OS. ie press - in font-family
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+
+      /* if our web font is not dowloded yet, then we can use font-display: block; which do not dosplay text untill font is downloaded. but if font never downloaded then text will not dispalyed. we can alos use optional, fallback options in it */
+      /* we can also reduce the font size when we r generating it from a website, by reducing character it will include */
+      /* wwe can downlaod any font and use it in our computer. for setting font it web page we should use font with woff or woff2 extension, because these r light weight */
+      /* we can copy these font file (downloaded files) in our project folder and can open them in vs. and can copy there code (which contains their name and their some properties and a source code ie path from where they r copying font in our computer) and paste them in our css. */
+      /* now as we register (we use @font-face{ }. u will fint it in the code u find in fonts file ) this font in css so we can use it for styling any font in our code by giving its name in font: ;  */
+
+      /* our text must be able to easily readable */
+      /* serif font has edges on characters. san-serif do not. monospace has only one/constant space between its charactes */
+      /* if p tag text is of diff font and a is of different font then it looks weird. our page shoul have a single type of font */
+
+      .fonts {
+        font-family: Arial, Helvetica, sans-serif; /* if arial is not found then browser looks for other after it ie helvetica. the font which appear may vary for different computers */
+
+        font-weight: 700;
+        font-weight: bold; /* bold equals to font-weight: 700; */
+
+        font-weight: normal; /* normal equals to font-weight: 400; */
+      }
+
+      /* we mostly use icons to help visually see */
+      /* while selecting icons, important thing is selecting icon pack. best icons r svg icon. chose icons of same pack in page. use icons having common look ie if they r round use others too as round, if they r square/boxy type use sq so that they do not look weird */
+      /* svg is a tag in which we use our web icons */
+      .my-web-icon {
+        /* in web, they says it is design for 24 by 24, means we should give H an W in 24. we can use it bigger but looks weird/big */
+        width: 50px;
+        height: 50px;
+
+        stroke: #087f5b;
+
+        fill: dodgerblue;
+      }
+
+      /* more border radius more it looks none serious. typography also plays an important role in it */
+
+      /* we can't set font size in px. cause a web page may look good in other computers but in mac it may seems smaller. thus we shoud use %,rem, em, vh, vw */
+
+      html {
+        font-size: 62.5%; /* means 62.5% of 16px = 10px*/
+      }
+
+      /* for tablets and other screens we use media queries */
+
+      /* law of proximity: how humans see objecs?. objects that r closer r percieved to be related. so we increase a little gap/margin bw separate elements and decrease gap bw related objects */
+
+      .units_for_fontsize {
+        font-size: 1.5rem; /* as root element ie html has 10px font size so it means 1.5 * 10 = 15 */
+
+        margin: 3rem 0 1rem; /* top right bottom. we have not provided left margin because browser will auto use it as right margin ie 0. we r using rem unit so if user changes font size then margins still related to other elements in page */
+
+        /* vertical gap bw lines*/
+        line-height: 1rem;
+
+        /* horizontal gap: */
+
+        letter-spacing: 1px; /* space bw letters. using rem unit makes space very large*/
+        letter-spacing: -1; /* we can also decrease letter spacing, we mostly us it in headings */
+
+        word-spacing: 5px; /* space bw words*/
+
+        /* ideal line length should be 50 to 70 characters */
+
+        width: 50ch; /* means 50 zeros. but some words takes less space than others ie i and 1 etc */
+      }
+
+      .text_formating {
+        text-align: center; /* horizontal alignment of text. by default it is left */
+
+        text-indent: 1rem; /* it is space bw the starting of a paragraph. to use it paragraph that comes just after a paragraph, we can use the selector p + p {} */
+
+        text-decoration: underline; /* line-through*/
+
+        text-transform: capitalize; /* capital the starting letter of every word */
+
+        white-space: nowrap; /* show all text in a tag in a single line. it overflow the text. if we set overflow:"hidden" then the text which is overfowing will be hiden and remaining words will be omitted. but to show ... at end of line we can use text-overflow:"ellipse".  */
+
+        line-clamp: 3; /* shows only 3 lines of text and hides other text. but this property in experimantal, not recomended to use */
+
+        column-count: 2; /* we can present our text in the form of columns */
+        column-gap: 1rem; /* we can also set gap bw these columns */
+        column-rule: 3px dotted grey; /* adds a line bw columns */
+
+        direction: rtl; /* text direction. by default it is ltr ie left to right. for using urdu,arabic,persian we use this */
+      }
+
+      /* resolution swtiching */
+
+      .img {
+        border: 4px dotted dodgerblue;
+      }
+    </style>
+  </head>
+
+  <!-- we can ause html, css validators websites to debug our html,css code -->
+  <!-- we can use 'caniuse' web to see which tags/properties we can/cant use  -->
+
+  <!-- we have many container elements in html ie div, span -->
+
+  <!-- div, span r genric elements/containers. but html5 introduce semantic elements ie article,figure,mark,time. these helps search engines  better understand the page-->
+
+  <!-- an article can be an independent, self contained content which can have forum post, comments, reviews, product cards -->
+
+  <!-- we use entities in html to show special characters ie <, @, > etc  -->
+
+  <body>
+    <!-- <p>
+        &lt;
+        &gt;
+    </p> -->
+
+    <!-- <article>
+        <h3>This is an article</h3>
+        <img src="" alt="">
+    </article> -->
+
+    <!-- fig caption can be above or below p tag -->
+    <!-- <figure>
+        <figcaption>This is fig caption</figcaption>
+        <p>This is a p tag inside figure tag</p>
+    </figure> -->
+
+    <!-- mark is used to highlight content -->
+    <!-- <mark>This is mark tag</mark> -->
+
+    <!-- time doesn't change physical appearance. it just helps search engines better extract data from a web page -->
+    <!-- <p>I'll go to college on <time datetime="2023-02-13 9:00">13-2-2023 at 9:15 O'Clock</time></p> -->
+
+    <!-- semantic elements for structuring a web page -->
+    <!-- header, main, footer r basic elements for a web page -->
+    <!-- we can also use aside for showing a thing aside (at a side) in a web page-->
+
+    <!-- header represents introductory content which belongs to web page or to a asection -->
+    <!-- <header> -->
+    <!-- normally we use nav to show list of elements -->
+    <!-- <nav> -->
+    <!-- <ul> -->
+
+    <!-- </ul> -->
+    <!-- </nav> -->
+    <!-- </header> -->
+
+    <!-- we use section element to group related content -->
+
+    <!-- we can have only 1 main in a page. using more means validaton error -->
+
+    <!-- in main sometimes we also have sections for diff type of things -->
+    <!-- we can also use section inside article -->
+    <!-- we can also use headers and footers in a section-->
+
+    <!-- <main>
+        
+        <section>
+            <h2>Products</h2>
+
+            <article></article>
+        </section>
+
+        <section>
+            <h2>Testimonial</h2>            
+            <article></article>
+            <article></article>
+        </section>
+
+
+    </main> -->
+
+    <!-- <aside>
+
+    </aside>
+
+    <footer>
+
+    </footer>
+
+    <div id="product">
+        this is di having id product
+    </div>
+
+
+    <p>This is 1st p after div#product </p>
+
+    <div>This is div after div#product</div>
+
+    <p>This is 2nd p after div#product</p> -->
+
+    <!-- gradients: -->
+
+    <!-- <div class="container">
+        <p>this is a p tag inisde container</p>
+        <strong>this is strong tag</strong>
+
+    </div> -->
+
+    <!-- <div class="borders">
+        this is my div for borders practice
+    </div> -->
+
+    <!-- <div class="shadows">
+        <h1>
+            this is div for shadows practice
+        </h1>
+    </div> -->
+
+    <!-- <div class="box_sizing">
+        div for practicing sizing of element
+    </div> -->
+
+    <!-- <div class="overflow">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum praesentium quod debitis eveniet iure. Eveniet optio, magni ducimus, culpa suscipit totam veniam iusto animi accusamus rem a, autem quia nam quaerat in? Iure facilis, pariatur eaque ad eligendi repudiandae mollitia possimus. Consequatur dolorum maxime nesciunt. Impedit culpa ea assumenda suscipit?
+    </div> -->
+
+    <!-- <div class="sizes">
+        div for checking sizes
+    </div> -->
+
+    <!-- position: -->
+    <!-- <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div> -->
+
+    <!-- float property: -->
+    <!-- an element can have multiple classez -->
+    <!-- <article class="tweet"> 
+        <div class="avatar"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, reiciendis.</p> -->
+
+    <!-- <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, recusandae facilis voluptates nesciunt delectus ipsa cumque consequuntur explicabo esse possimus illo labore libero maxime, maiores quidem officiis soluta quae et odit porro? Minus unde incidunt iure! Pariatur eius facere accusamus iusto repudiandae ipsa, perferendis nesciunt? Esse nostrum dolorem sed exercitationem!</p> -->
+
+    <!-- </article> -->
+
+    <!-- flex used to set elements in a direction either in column/row etc -->
+
+    <!-- .contaier>.box*3 -->
+
+    <!-- <div class="flexbox">
+        <div class="box box_one">A</div> 
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div> -->
+
+    <!-- <div class="box">E</div>
+        <div class="box">F</div>
+        <div class="box">G</div>
+        <div class="box">H</div>
+        <div class="box">I</div> -->
+
+    <!-- </div> -->
+
+    <!-- flex represent items in row/column. grid used to show in both rows and columns ie in table -->
+
+    <!-- <div class="grid"> -->
+
+    <!-- it auto sets boxes in grid from top left -->
+
+    <!-- <div class="box-for-grid box-for-grid-1">A</div>
+        <div class="box-for-grid">B</div>
+        <div class="box-for-grid">C</div>
+        <div class="box-for-grid">D</div>
+        <div class="box-for-grid">E</div>
+    </div> -->
+
+    <!-- <div class="visibility">This is dic for visibility practice</div> -->
+
+    <!-- media queries used to resize page according to screen size -->
+    <!-- <div class="container-mq">
+        <div class="box-mq">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi deleniti qui veritatis, officia officiis modi eligendi debitis in laudantium temporibus ipsam incidunt et molestiae iure minima necessitatibus vero voluptatum culpa.</div>
+        <div class="box-mq">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates ipsum ducimus quas velit magnam rerum alias omnis, deserunt optio minima ipsam officia laborum quia ex porro eveniet, delectus recusandae sunt fugit. Possimus eum, ad consequuntur totam nihil sequi! Asperiores, aut.</div>
+    </div> -->
+
+    <!-- using web fonts (other fonts r called web safe fonts which r availble on almost all computers ie serif, san-serif, monospce, arial etc) has a problem, when browser is loading or it can't load font then it shows with another font which is called flash of unstyled text. browser stores web fonts and some images in its cache memory. we can use disable cache option in developer tools. after disabling it or using web page with slow internet (u can select in dev tools) helps u see this -->
+
+    <!-- we copied it from hero icon web -->
+    <!-- we can rename its class -->
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="my-web-icon">
+
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+
+      </svg> -->
+
+    <!-- &mdash; it is '_' -->
+
+    <!-- press alt then select multiple code at different lines -->
+
+    <!-- <div class="units_for_fontsize">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum mollitia dignissimos alias sequi ab maiores quibusdam voluptatibus minima doloribus sit nemo eum perferendis, iste nisi numquam quia cumque, molestiae modi.
+      </div> -->
+
+    <!-- formating text -->
+
+    <!-- <div class="text_formating">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. A veritatis qui suscipit voluptates velit nisi enim ipsum aspernatur, nulla vitae atque beatae fuga in quasi totam incidunt dolorum ex inventore architecto cum provident debitis rerum sed. Atque earum tempora, perspiciatis voluptate rem unde amet nihil non magnam ad at! Ratione totam officia autem perferendis blanditiis consectetur. Praesentium et omnis distinctio magnam quasi incidunt nobis, aspernatur debitis eaque magni quisquam alias voluptatem dignissimos aliquid corporis voluptate dolor! Quas, accusamus, voluptate praesentium, reprehenderit magni beatae voluptatibus corporis soluta nam laboriosam fugit sapiente quos iure optio suscipit atque ipsam explicabo nostrum. Dignissimos, facere.
+      </div> -->
+
+    <!-- resolution switching. eg if we want our image takes full screen on mobile and hal on tablet and 1/3 on laptops then we use this method-->
+
+    <!-- browser pick the relevant image  -->
+    <!-- <img
+      class="img"
+      src="Pictures/gym icon.png"
+      alt="gym"
+
+      srcset="
+       Pictures/gym icon.png 1x,
+       Pictures/images(98).jpg 2x
+       "
+       sizes="
+       (mix-width: 500px) 100vw,
+       (mix-width: 700px) 50vw,
+       3vw
+       "
+    /> -->
+
+
+
+
+
+
+
+
+    <!-- using modern image format ie webp. these have very small size than jpg or png. u can use same pic as webp format and in other format to see difference. jpg/png may looks a bit sharper but webp has very small sizes therefore recomended to use webp -->
+
+    <!-- we do not yet have webp image, u can get it cloud  -->
+    
+    <!-- <img src="picture/gym.webp" alt="">
+    <img src="picture/gym.jpg" alt=""> -->
+     
+
+    <!-- some browser do not support webp format eg IE (see ss). so use picture element-->
+
+    <!-- <picture> -->
+            <!-- type is image and subtype is webp-->
+        <!-- <source type="image/webp" srcset="picture/gym.webp">
+        <source type="image/webp" srcset="picture/gym.jpg"> -->
+
+            <!-- we also use img because of alt attribute, and for the browsers who do not support picture element-->
+        <!-- <img src="picture/gym.jpg" alt="gym"> -->
+    <!-- </picture> -->
+
+
+<!-- ------------------------------------------------- -->
+
+
+    <!--
+       
+    *   visual heirarichy is about drawing attention of user towards imortant elements (towrds those elements first which we want). we do this wth of position, colors, borders, shadows spacing etc. 
+    Fundamentals: 
+
+    users focus on top first then to other. attention usually flow from top to bottom.
+    images draw a lot of attention (use meaningful). if there's text on page and we want to move user attention to text then not use image or use smaller images. larger images draws more.
+    white space
+
+
+    *   visual heirarichy for text elements:
+    more font size to important texts.
+    add font weight
+    lighten color of less important texts
+
+    insta doest not want users to move attention awAy from pics therefore it use small letters
+
+    *   visual h bw components:
+    usuallyy developer highlughts the one component/card he want the user to choose ie showing expensive cards with other color and the cheapest (the one he want the user to give attention/click) one with another color (or by using bg color)
+  
+  
+  
+  
+  
+  -->
+
+
+  </body>
+</html>
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        /* the element having greater z-index value will be displayed on top of other elements (in case of overlapping) */
+
+        /* to see difference bw sticky and fixed position remove m0 and p0 */
+        /* *{
+            margin: 0;
+            padding: 0;
+        } */
+        li{
+            /* display: inline; */
+
+            /* if we set list-style as inside then symbols of list item (i.e square or circles) r placed near to list items */
+            list-style:circle inside;
+                        
+            /* list-style: square outside; */
+            /* list-style: square inside url(/Pictures/luxury-real-estate.jpg); */
+
+        }
+        header{
+            /* display: inline; */
+            background-color: rgba(0, 0, 0, 0.808);
+            color: wheat;
+            height: 10vh;
+            text-align: center;
+
+            /* if we give this as fixed then this header will fited on top left corner */
+            /* position: fixed; */
+            position: sticky;
+            top: 0;
+
+            z-index: 1;
+        }
+
+        p{
+            text-align: center;
+            border: 2px solid red;
+        }
+        .container{
+            background-color: aqua;
+            height: 250vh;
+            width: 50vw;
+            margin: auto;
+            /* text-align: center; */
+
+            /* if we set this as relative then we set this as parent container of box */
+            position: relative;     
+            
+            z-index: 0;
+        }
+
+        .box{
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            background-color: green;
+
+            /* we cant set these below properties until we set position */
+            /* if posotion is static (default position is static) we cant set top,left etc */
+
+            /* by setting position as relative then that element will set its position according to its normal position and leaving a gap between its normal position and new position  */
+            /* position: relative; */
+
+            /* by setting position as absolute then that element will set its position according to its parent element */
+            /* position:absolute; */            
+            /* top: 10px;
+            left: 10px; */
+
+            /* if we set this as fixed then this element will be fixed (fitted) on thw window screen. no matter how much we scroll down or scroll up, it will be fixed on window screen */
+            position: fixed;
+            left: 0;
+            top: 10vh;
+
+            /*  */
+            /* position: sticky; */
+
+
+            z-index: 2;
+        }
+        /* setting position of box will not affect box2 position*/
+        .box2{
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            background-color: rgb(24, 196, 24);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, aut delectus est necessitatibus nulla omnis illum ab optio officiis explicabo quisquam. Harum voluptatem possimus reiciendis minus quisquam, temporibus vel magni?</p>
+        <div class="box">
+            i am box
+        </div>
+        <div class="box2">
+            i am box2
+        </div>
+    </div>
+</body>
+</html>

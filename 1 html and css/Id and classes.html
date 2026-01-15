@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* these ids and classes are like properties we can give these properties to other elements */
+
+        /* id class1 span p.class are selectors used to find elements to which properties are to be given */
+
+        /* universal selector */
+        /* *{
+
+        } */
+        /* id selector */
+        #id1{
+            border: 1px solid black;
+        }
+        /* class selector */
+        .class1{
+            color: midnightblue;
+        }
+        .class2{
+            /* font-size: 0px; this sets text of 0 size */
+            font-size: 50px;
+        }
+
+        /* Grouping selector */
+        /* below will set properties of span and p tag having class name as class5 */
+        span, p.class5{
+            background-color: lawngreen;
+            border: 2px solid maroon;
+        }
+
+        /* element selector */
+        /* p{
+
+        } */
+    </style>
+</head>
+<body>
+    <!-- we can give many classes to elements -->
+    <!-- <p id="id1" class="class1 class2">This is p with id1, class1 and class2</p>
+    <p class="class1">This is p with class1</p>
+
+    <p id="id1">This is p with id1</p> -->
+
+
+    <!-- span.class3.class4 -->
+    <!-- span.class3.class4*4 -->
+
+    <!-- below creates p with id as id and class as class -->
+    <!-- p#id.class -->
+
+    <!-- below will create div with class default. it means emmet takes div as default -->
+    <!-- .default -->
+
+
+
+    <p class="class5">This is p tag with class5</p>    
+    <p>This is p tag with no class</p>
+
+    <span>This is span tag we are setting its color and border with css</span>
+
+</body>
+</html>

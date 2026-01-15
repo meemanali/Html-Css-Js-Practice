@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eeman's Club</title>
+    <style>
+        /* Css Reset */        
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            user-select: none;
+            background: url(/Pictures/black\ white\ gym\ pic.jpg) no-repeat;
+            /* this size is not working in above line so we write it separate */
+            background-size: 100vw 100vh;
+
+            color: white;
+            
+            
+            /* we have to set this after background */
+            /* background-repeat: no-repeat; */
+
+            /* write no-repeate before or after but it still work */
+            /* background: no-repeat url(/Pictures/black\ white\ gym\ pic.jpg); */
+            
+            /* background: url(/Pictures/black\ white\ gym\ pic.jpg) currentColor; */
+            
+            /* below set pic and also set background brown color on remaining place */
+            /* background: brown url(/Pictures/black\ white\ gym\ pic.jpg); */
+
+            /* below is not working */
+            /* background: url("F:\Icons\black white gym pic.png"); */
+        }
+        .left{
+            /* border: 2px solid olive; */
+            position: absolute;
+            top: 15px;
+            left: 50px;            
+            background-color: white;
+        }
+        /* below means target img inside .left */
+        .left img{  
+            display: block;          
+            width: 60px;
+            height: 40px;
+            margin: auto;
+            /* filter: invert(100%); */
+        }
+        .left div{        
+            /* position: relative; */
+            /* display: inline-block; */
+            color: black;
+            line-height: 30px;
+            font-size: 18px;
+        }
+        .mid{            
+            /* border: 2px solid cadetblue; */
+            display: block;
+            width: 40%;
+            margin: 20px auto;
+            /* position: absolute; */
+            /* top: 20px; */
+        }
+        .right{
+            /* border: 2px solid orangered; */
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            right: 50px;            
+        }
+        .btn{
+            border-radius: 10px;
+            background-color: rgb(38, 35, 35);
+            color: white;
+            padding: 4px;
+        }
+        .btn:hover{
+            background-color: gray;
+        }
+        .navbar{
+            display: inline-block;
+        }
+        .navbar li{
+            display: inline-block;
+            font-size: 17px;            
+        }
+        .navbar li a{            
+            /* padding: 0px 27px; */
+            margin: 0px 2vw;            
+            text-decoration: none;   
+            color: white;
+        }
+        .navbar li a:hover
+        {
+            text-decoration: underline;
+            color: grey;
+        }
+        .container{
+            border: 2px solid gray;
+            border-radius: 20px;
+            margin: 100px auto;
+            padding: 50px;
+            width: 33%;
+        }
+        .container h1{
+            /* below position can exceed padding of its container */
+            /* position: relative;
+            top: 1px; */
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .container button{
+            width: 350px;
+            font-size: 17px;
+        }
+        /* if an item is block (if not then we can set by display:block;) then only we can take it to mid of its parent by margin: auto; method  */
+        .form-group input{
+            text-align: center;
+            display: block;
+            width: 350px;
+            margin: 3px auto;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+        form button{
+            display: block;
+            width: inherit;
+            margin: 20px auto;
+        }        
+        /* img{
+            height: 99vh;
+            width: 99vw;
+        } */
+    </style>
+</head>
+<body>
+    <header>
+        <!-- for logo -->
+        <div class="left">
+            <img src="/Pictures/gym icon.png" alt="">
+            <div>Eeman's Fitness</div>
+        </div>
+        <!-- for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Fitness Calculator</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>            
+        </div>
+        <!-- for buttons -->
+        <div class="right">
+            <button class="btn" >Call Us Now</button>
+            <button class="btn" >Email Us</button>
+        </div>
+    </header>    
+    <div class="container">
+        <h1>Join Best Gym of D I Khan Now</h1>
+        <!-- action atribute takes us to error page if there is no nothing.php -->
+        <!-- if we press any button inside form then it takes to nothing.php -->
+        <form action="nothing.php">
+            <div class="form-group">
+                <input type="text" placeholder="Enter Your Name" name="" id="">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Your Age" name="" id="">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Your Height" name="" id="">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Your Gender" name="" id="">
+            </div>
+            <button class="btn">Submit</button>            
+        </form>        
+    </div>
+</body>
+</html>
