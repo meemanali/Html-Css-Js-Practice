@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+
+    <!-- there r 2 ways fro adding bootsrap: -->
+    <!-- 1- by downloading and giving file name of bootstrap file in href -->
+    <!-- 2- by using cdn. and giving link of bootstrap in href -->
+
+
+    <!-- include bootstrap wth of below cdn. As reference, here are our primary CDN links. -->    
+    <!-- bootstrap CSS: -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- bootstrap JS: -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    /> -->
+
+    <!-- adding js and jq is also recommended. for them we use script tags. we can also use their cdn for bootstrap or download and then use their file name in script tag -->
+
+</head>
+<body>
+
+    <!--  so as bootrap is a framework, thus i think these classes have built-in styles which applied to these classes. when we rename these classes names these do not work in the propoer way. -->
+    <!--  we dont need to remember all classes, goto their web ad find yr required one -->
+    <!-- internet is neccessary for bootstrap cdn. for downloaded bootsnim not sure -->
+
+    <!-- jumbotron is a class in bootsrap -->
+    <div class="jumbotron">This is jumbotron</div>
+
+    <!-- by using container, this jumbotron will always be in center -->
+    <div class="container">
+        <div class="jumbotron">This is jumbotron</div>
+    </div>
+
+    <!-- tables styles -->
+    <!-- boots also contains awesome classes for tables in html -->
+    <!-- try other classes too eg table-active, table-hover, table-responsive -->
+    <table class="table table-striped">
+        <th>
+            <td>Name</td>
+            <td>Email</td>
+        </th>
+        <tr>
+            <td>Eeman</td>
+            <td>meemanali72@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Mani</td>
+            <td>meemanali2@gmail.com</td>
+        </tr>
+    </table>
+
+    <blockquote class="blockquote-reverse">This is blockquote reverse class in boots</blockquote>
+
+    <!-- list style -->
+    <dl class="dl-horizontal">
+        <dt>A</dt>
+        <dd>B</dd>
+        <dt>C</dt>
+        <dd>D</dd>        
+    </dl>
+
+    <ul class="list-group">
+        <li class="list-group-item">Home</li>
+        <li class="list-group-item-heading">About</li>
+        <li class="list-group-item">Help</li>            
+    </ul>
+
+    <ul class="list-inline">
+        <li>Home</li>
+        <li>About</li>
+        <li>Help</li>
+    </ul>
+
+    <ul class="list-inline">
+        <li>Home</li>
+        <li>About</li>
+        <li>Help</li>
+    </ul>
+
+    
+
+
+    <!-- pre tag styles -->
+    <pre class="pre-scollable">
+        a quick brown
+        fox jumps over a lozy dog.
+    </pre>
+
+    <!-- text styles -->
+    <p class="text-primary">text primary of boots</p>
+    <p class="text-danger">text danger of boots</p>
+    <p class="text-capitialize text-info">text capitialize and info of boots</p>
+    <p class="text-nowrap">text nowrap of boots</p>
+
+    <!-- images styles -->
+    <img class="img-rounded" src="" alt="">
+    <img class="img-circle" src="" alt="">
+    <img class="img-thumbnail" src="" alt="">
+    <img class="img-responsive" src="" alt="">
+
+    <!-- buttons -->
+    <div class="btn-group btn-group-vertical">
+        <Button class="btn btn-primary"></Button>
+        <Button class="btn btn-info"></Button>
+    </div>
+
+    <!-- dropdown. all bootstrap classes r not only made up of css, some also uses js and jquery dropdown is one of them. thus for using them we also need to include js and jq cdn of files of them in head -->
+    <div class="dropdown">
+        <button class="btn btn-primary">Click to show</button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">ABout</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header"></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+
+    </div>
+
+    <!-- glyphicon. these r icons -->
+        <!-- to see other icons: glyphicons.bootstrapcheatsheets.com -->
+    <p>Like <span class="glyphicon glyphicon-thumbs-up"></span></p>
+
+    <!-- header -->
+    <div class="page-header">
+        <h1>Hello</h1>
+    </div>
+
+    <!-- well class -->
+    <div class="well">this is well</div>
+    <div class="well well-sm">this is well well-sm</div>
+    <div class="well well-lg">this is well well-lg</div>
+
+    <!-- alerts -->
+    <div class="alert alert-danger">this is a div with alert-danger</div>
+    <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert"></a>this is a div with alert-success</div>
+
+    <!-- badges. similar to number of msgs shown in whatsapp -->
+    <a href="">Messages <span class="badge">5</span></a><br>
+
+    <!-- panel -->
+        <!-- wca use panel-primary, panel-warning etc -->
+    <div class="panel panel-default">
+        <div class="panel-heading">This is panel heading</div>
+        <div class="panel-body">This is panel body</div>
+        <div class="panel-footer">This is panel footer</div>
+    </div>
+
+        <!-- collapse. wc collapse (hide) data wth of this class. wca use collapse in panels or in buttons etc -->
+    <button data-toggle="collapse" data-target="#collapsel">Click to collapse</button>
+        <!-- if we give class name of below as "collapse in" then by default data will be hiden -->
+    <div class="collapsel" class="collapse">this is collapsible data</div>
+
+    <!-- navigation -->
+        <!-- also try this in below: nav nav-pills nav-justified -->
+        <!-- wc make very beautiful navbars using nav, nav-inverse, nav-fixed-top etc classes -->
+    <ul class="nav nav-tabs nav-justified">
+        <li><a href="#">Home</a></li>
+        <!-- this active will show this about as active tab in page -->
+        <li class="active"><a href="#">About</a></li>
+        
+        <li class="active">
+            <a href="#">Info </a><span class="caret"></span>
+        </li>
+        
+        <li><a href="#">Help</a></li>        
+    </ul>
+
+    <!-- pager  -->
+    <ul class="pager">
+        <li class="previous">Go PreviouS</li>
+        <li class="next">Next</li>
+    </ul>
+
+    <ul class="pagination">
+        <li class="active">1</li>
+        <li>2</li>
+        <li class="disable">3</li>
+    </ul>
+
+        <!-- below is little smaller than above -->
+        <!-- wca insert below ul in a div having class text-center which puts this in center -->
+    <ul class="pagination pagination-sm">
+        <li class="active">1</li>
+        <li>2</li>
+        <li class="disable">3</li>
+    </ul>
+
+    <!-- forms. their r many classes for designing beautiful forms. col-md-offset-2, col-md-2 etc  -->
+
+    <!-- modals. it is actually part of js and jq but wth of boots wc use it. it displays a box similar to alert. wc insert a whole form inside body of modal  -->
+    <button data-toggle="modal" data-target="#modal1">Click to view</button>
+    <div id="modal1" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal"></button>
+                    <h3 class="modal-title">Modal Header</h3>
+                </div>
+                <div class="modal-body">
+                    <p>this is modal body</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- carousal. use for making sliding images -->
+
+    <!-- tooltip -->
+
+    <!-- popover -->
+
+    <!-- data-spy="scroll" -->
+
+    <!-- data-spy="affix" -->
+
+
+
+
+    <!-- whats diif bw container and container-fluid -->
+
+</body>
+</html>
